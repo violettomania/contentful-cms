@@ -1,3 +1,5 @@
+import heroImg from '../assets/hero-d50f9f18.svg';
+
 export default function Hero() {
   return (
     <section className='hero'>
@@ -11,6 +13,9 @@ export default function Hero() {
             chillwave banjo gochujang kinfolk small batch mustache.
           </p>
         </div>
+      </div>
+      <div className='img-container'>
+        <img src={heroImg} alt='woman and the browser' className='img' />
       </div>
     </section>
   );
