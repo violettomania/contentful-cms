@@ -6,3 +6,6 @@ export default function Project({ title, image, url }: SingleProject) {
     </a>
   );
 }
+
+// TODO: fix images not showing up
+// TODO: remove static data file

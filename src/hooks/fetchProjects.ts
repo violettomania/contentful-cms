@@ -2,14 +2,15 @@ import { useState, useEffect } from 'react';
 import { createClient, Entry } from 'contentful';
 
 const client = createClient({
-  space: process.env.SPACE as string,
+  space: process.env.REACT_APP_SPACE as string,
   environment: 'master',
-  accessToken: process.env.ACCESS_TOKEN as string,
+  accessToken: process.env.REACT_APP_ACCESS_TOKEN as string,
 });
 
 const useFetchProjects = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [projects, setProjects] = useState<SingleProject[]>([]);
+
   const fetchProjects = async () => {
     try {
       const response = await client.getEntries({ content_type: 'projects' });
@@ -36,3 +37,5 @@ const useFetchProjects = () => {
 
   return { isLoading, projects };
 };
+
+export default useFetchProjects;
