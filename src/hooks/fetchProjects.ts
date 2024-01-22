@@ -16,11 +16,14 @@ const useFetchProjects = () => {
       const response = await client.getEntries({ content_type: 'projects' });
       const currentProjects: SingleProject[] = [];
       response.items.forEach((entry: Entry<any>) => {
+        console.log('entry', entry);
         const project: SingleProject = {
           title: entry.fields.title as string,
-          image: entry.fields.image as string,
+          image: (entry.fields.image as { fields: { file: { url: string } } })
+            .fields.file.url,
           url: entry.fields.url as string,
         };
+        console.log('project', project);
         currentProjects.push(project);
       });
       setProjects(currentProjects);
