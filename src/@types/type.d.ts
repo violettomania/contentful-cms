@@ -3,3 +3,5 @@ type SingleProject = {
   image: string;
   url: string;
 };
+
+type ProjectEntry = Entry<ProjectFields>;
