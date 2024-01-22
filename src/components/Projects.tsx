@@ -4,6 +4,14 @@ import Project from './Project';
 export default function Projects() {
   const { isLoading, projects } = useFetchProjects();
 
+  if (isLoading) {
+    return (
+      <section className='projects'>
+        <h2>Loading...</h2>
+      </section>
+    );
+  }
+
   return (
     <section className='projects'>
       <div className='title'>
@@ -18,5 +26,3 @@ export default function Projects() {
     </section>
   );
 }
-
-// TODO: add loading spinner
