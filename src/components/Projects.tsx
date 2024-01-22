@@ -18,3 +18,5 @@ export default function Projects() {
     </section>
   );
 }
+
+// TODO: add loading spinner
